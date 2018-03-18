@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace LoginService.Domain
@@ -22,7 +23,17 @@ namespace LoginService.Domain
 				return CheckCode.Empty;
 			}
 
-			return CheckLength();
+			var checkLength= CheckLength();
+			if (checkLength != CheckCode.Success)
+			{
+				return checkLength;
+			}
+
+			var regex = new Regex("^[A-Za-z0-9]+$");
+			if (!regex.IsMatch(_login))
+				return CheckCode.InvalidCharacters;
+
+			return CheckCode.Success;
 		}
 
 		private CheckCode CheckLength()
