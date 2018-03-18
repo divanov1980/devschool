@@ -17,6 +17,11 @@ namespace LoginService.Domain
 
 		public CheckCode Check()
 		{
+			if (string.IsNullOrEmpty(_login))
+			{
+				return CheckCode.Empty;
+			}
+
 			return CheckCode.Success;
 		}
 	}
