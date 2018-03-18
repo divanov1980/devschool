@@ -36,5 +36,18 @@ namespace LoginService.Tests
 			//Assert
 			Assert.AreEqual(CheckCode.Empty, code);
 		}
-    }
+
+		[Test]
+		public void Check_ReturnTooShort()
+		{
+			//Arrange
+			var login = new Login("t11");
+
+			//Act
+			var code = login.Check();
+
+			//Assert
+			Assert.AreEqual(CheckCode.TooShort, code);
+		}
+	}
 }
