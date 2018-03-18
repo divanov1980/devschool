@@ -49,5 +49,18 @@ namespace LoginService.Tests
 			//Assert
 			Assert.AreEqual(CheckCode.TooShort, code);
 		}
+
+		[Test]
+		public void Check_ReturnTooLong()
+		{
+			//Arrange
+			var login = new Login("testtesttesttest");
+
+			//Act
+			var code = login.Check();
+
+			//Assert
+			Assert.AreEqual(CheckCode.TooLong, code);
+		}
 	}
 }
