@@ -11,6 +11,7 @@ namespace LoginService.Domain
 		Unknown=0,
 		Success =1,
 		TooLong =2,
-		TooShort =3
+		TooShort =3,
+		Empty =4
 	}
 }

@@ -15,9 +15,9 @@ namespace LoginService.Domain
 			_login = login;
 		}
 
-		public object Check()
+		public CheckCode Check()
 		{
-			throw new NotImplementedException();
+			return CheckCode.Success;
 		}
 	}
 }
