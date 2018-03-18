@@ -12,7 +12,7 @@ namespace LoginService.Tests
 	public class LoginTests
     {
 		[Test]
-		public void Check_Success()
+		public void Check_ReturnSuccess()
 		{
 			//Arrange
 			var login = new Login("test2048");
@@ -22,6 +22,19 @@ namespace LoginService.Tests
 
 			//Assert
 			Assert.AreEqual(CheckCode.Success, code);
+		}
+
+		[Test]
+		public void Check_ReturnEmpty()
+		{
+			//Arrange
+			var login = new Login("");
+
+			//Act
+			var code = login.Check();
+
+			//Assert
+			Assert.AreEqual(CheckCode.Empty, code);
 		}
     }
 }
