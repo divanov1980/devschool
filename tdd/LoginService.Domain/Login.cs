@@ -8,5 +8,16 @@ namespace LoginService.Domain
 {
     public class Login
     {
-    }
+		private string _login;
+
+		public Login(string login)
+		{
+			_login = login;
+		}
+
+		public object Check()
+		{
+			throw new NotImplementedException();
+		}
+	}
 }

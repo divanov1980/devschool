@@ -59,6 +59,12 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LoginService.Domain\LoginService.Domain.csproj">
+      <Project>{e629cde0-ced9-47f3-b6ed-a165485157e7}</Project>
+      <Name>LoginService.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

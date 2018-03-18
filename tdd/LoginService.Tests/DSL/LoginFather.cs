@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LoginService.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace LoginService.Tests.DSL
 {
 	public class LoginFather
 	{
-		
+		private Login _login;
+
 	}
 }

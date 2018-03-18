@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace LoginService.Tests.DSL
 {
-	class Create
+	public static class Create
 	{
+		public static LoginFather Login()
+		{
+			return new LoginFather();
+		}
 	}
 }
