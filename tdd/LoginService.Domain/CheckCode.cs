@@ -12,6 +12,7 @@ namespace LoginService.Domain
 		Success =1,
 		TooLong =2,
 		TooShort =3,
-		Empty =4
+		Empty =4,
+		InvalidCharacters = 5
 	}
 }

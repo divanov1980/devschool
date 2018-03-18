@@ -62,5 +62,31 @@ namespace LoginService.Tests
 			//Assert
 			Assert.AreEqual(CheckCode.TooLong, code);
 		}
+
+		[Test]
+		public void Check_ReturnInvalidCharactersWhenEnteredSpecialSymbols()
+		{
+			//Arrange
+			var login = new Login("test&%%$");
+
+			//Act
+			var code = login.Check();
+
+			//Assert
+			Assert.AreEqual(CheckCode.InvalidCharacters, code);
+		}
+
+		[Test]
+		public void Check_ReturnInvalidCharactersWhenEnteredRussianSymbols()
+		{
+			//Arrange
+			var login = new Login("testвася");
+
+			//Act
+			var code = login.Check();
+
+			//Assert
+			Assert.AreEqual(CheckCode.InvalidCharacters, code);
+		}
 	}
 }

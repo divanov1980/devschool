@@ -23,7 +23,6 @@ namespace LoginService.Domain
 			}
 
 			return CheckLength();
-			
 		}
 
 		private CheckCode CheckLength()
