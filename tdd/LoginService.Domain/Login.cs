@@ -22,6 +22,11 @@ namespace LoginService.Domain
 				return CheckCode.Empty;
 			}
 
+			if (_login.Length < 4)
+			{
+				return CheckCode.TooShort;
+			}
+
 			return CheckCode.Success;
 		}
 	}
