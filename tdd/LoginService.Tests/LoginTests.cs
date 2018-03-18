@@ -73,7 +73,7 @@ namespace LoginService.Tests
 			var code = login.Check();
 
 			//Assert
-			Assert.AreEqual(CheckCode.InvalidCharacters, code);
+			Assert.AreEqual(CheckCode.InvalidSymbols, code);
 		}
 
 		[Test]
@@ -86,7 +86,7 @@ namespace LoginService.Tests
 			var code = login.Check();
 
 			//Assert
-			Assert.AreEqual(CheckCode.InvalidCharacters, code);
+			Assert.AreEqual(CheckCode.InvalidSymbols, code);
 		}
 	}
 }

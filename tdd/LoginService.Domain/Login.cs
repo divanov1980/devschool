@@ -29,11 +29,19 @@ namespace LoginService.Domain
 				return checkLength;
 			}
 
-			var regex = new Regex("^[A-Za-z0-9]+$");
-			if (!regex.IsMatch(_login))
-				return CheckCode.InvalidCharacters;
+			if (!IsValidSymbols())
+			{
+				return CheckCode.InvalidSymbols;
+			}
 
 			return CheckCode.Success;
+		}
+
+		private bool IsValidSymbols()
+		{
+			var regex = new Regex("^[A-Za-z0-9]+$");
+			return regex.IsMatch(_login);
+				
 		}
 
 		private CheckCode CheckLength()
